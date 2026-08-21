@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X TKJ 2 — SMK Yadika 13 Tambun | Hogwarts Edition ⚡</title>
+    <meta name="description" content="Website resmi kelas X TKJ 2 SMK Yadika 13 Tambun dengan tema Harry Potter. Selamat datang di dunia sihir teknologi jaringan komputer!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+    <!-- ============ LOADING SCREEN ============ -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="wand-container">
+                <div class="wand">
+                    <div class="wand-tip"></div>
+                </div>
+                <div class="wand-sparks">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <p class="loading-text">Lumos<span class="dots">...</span></p>
+            <div class="loading-bar">
+                <div class="loading-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ PARTICLE CANVAS ============ -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="images/school-logo.jpg" alt="Crest X TKJ 2" class="nav-crest">
+                <div class="nav-logo-text">
+                    <span class="nav-title">X TKJ 2</span>
+                    <span class="nav-school">Yadika 13</span>
+                </div>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active" data-section="hero">
+                    <span class="nav-icon">🏠</span> Home
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <span class="nav-icon">📜</span> About
+                </a>
+                <a href="#wali-kelas" class="nav-link" data-section="wali-kelas">
+                    <span class="nav-icon">👩🏫</span> Wali Kelas
+                </a>
+                <a href="#struktur" class="nav-link" data-section="struktur">
+                    <span class="nav-icon">👨‍🎓</span> Struktur
+                </a>
+                <a href="#gallery" class="nav-link" data-section="gallery">
+                    <span class="nav-icon">🖼️</span> Gallery
+                </a>
+                <a href="#jadwal" class="nav-link" data-section="jadwal">
+                    <span class="nav-icon">📚</span> Jadwal
+                </a>
+            </div>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="hero">
+        <div class="hero-bg-layer">
+            <img src="images/hogwarts-bg.jpg" alt="" class="hero-bg-img">
+        </div>
+        <div class="hero-overlay"></div>
+
+        <!-- Floating Candles -->
+        <div class="floating-candles">
+            <div class="candle" style="--x: 8%; --delay: 0s; --duration: 4s;">
+                <div class="flame"></div>
+                <div class="candle-body"></div>
+                <div class="candle-glow"></div>
+            </div>
+            <div class="candle" style="--x: 22%; --delay: 0.8s; --duration: 3.5s;">
+                <div class="flame"></div>
+                <div class="candle-body"></div>
+                <div class="candle-glow"></div>
+            </div>
+            <div class="candle" style="--x: 38%; --delay: 1.6s; --duration: 4.5s;">
+                <div class="flame"></div>
+                <div class="candle-body"></div>
+                <div class="candle-glow"></div>
+            </div>
+            <div class="candle" style="--x: 55%; --delay: 0.4s; --duration: 3.8s;">
+                <div class="flame"></div>
+                <div class="candle-body"></div>
+                <div class="candle-glow"></div>
+            </div>
+            <div class="candle" style="--x: 70%; --delay: 2s; --duration: 4.2s;">
+                <div class="flame"></div>
+                <div class="candle-body"></div>
+                <div class="candle-glow"></div>
+            </div>
+            <div class="candle" style="--x: 85%; --delay: 1.2s; --duration: 3.6s;">
+                <div class="flame"></div>
+                <div class="candle-body"></div>
+                <div class="candle-glow"></div>
+            </div>
+            <div class="candle" style="--x: 48%; --delay: 2.5s; --duration: 4.8s;">
+                <div class="flame"></div>
+                <div class="candle-body"></div>
+                <div class="candle-glow"></div>
+            </div>
+            <div class="candle" style="--x: 92%; --delay: 0.2s; --duration: 3.3s;">
+                <div class="flame"></div>
+                <div class="candle-body"></div>
+                <div class="candle-glow"></div>
+            </div>
+        </div>
+
+        <!-- Floating Magical Elements -->
+        <div class="floating-elements">
+            <div class="float-element snitch" style="--x: 15%; --y: 25%; --delay: 0s;">✦</div>
+            <div class="float-element snitch" style="--x: 80%; --y: 20%; --delay: 1.5s;">✦</div>
+            <div class="float-element star" style="--x: 65%; --y: 15%; --delay: 0.5s;">★</div>
+            <div class="float-element star" style="--x: 25%; --y: 70%; --delay: 2s;">★</div>
+            <div class="float-element star" style="--x: 90%; --y: 60%; --delay: 1s;">✧</div>
+            <div class="float-element bolt" style="--x: 45%; --y: 10%; --delay: 0.8s;">⚡</div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content" id="hero-content">
+            <div class="hero-badge reveal">
+                <span class="badge-icon">⚡</span>
+                The Wizarding Class of Technology
+                <span class="badge-icon">⚡</span>
+            </div>
+            <h1 class="hero-title reveal">
+                <span class="title-line title-kelas">Kelas</span>
+                <span class="title-line title-main">X TKJ 2</span>
+            </h1>
+            <p class="hero-subtitle reveal">SMK Yadika 13 Tambun</p>
+            <p class="hero-tagline reveal">
+                <em>Belajar • Berkarya • Berprestasi</em>
+            </p>
+            <a href="#about" class="hero-cta reveal">
+                <span class="cta-text">Jelajahi Dunia Sihir</span>
+                <span class="cta-arrow">↓</span>
+            </a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <p class="scroll-text">Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section id="about">
+        <div class="section-bg">
+            <img src="images/particles-bg.jpg" alt="" class="section-bg-img">
+        </div>
+        <div class="section-overlay"></div>
+
+        <!-- 3D Animated Background Elements -->
+        <div class="bg-3d-scene">
+            <div class="orbit orbit-1">
+                <div class="orbit-particle"></div>
+            </div>
+            <div class="orbit orbit-2">
+                <div class="orbit-particle"></div>
+            </div>
+            <div class="orbit orbit-3">
+                <div class="orbit-particle"></div>
+            </div>
+            <div class="floating-cube cube-1">
+                <div class="cube-face front"></div>
+                <div class="cube-face back"></div>
+                <div class="cube-face left"></div>
+                <div class="cube-face right"></div>
+                <div class="cube-face top"></div>
+                <div class="cube-face bottom"></div>
+            </div>
+            <div class="floating-cube cube-2">
+                <div class="cube-face front"></div>
+                <div class="cube-face back"></div>
+                <div class="cube-face left"></div>
+                <div class="cube-face right"></div>
+                <div class="cube-face top"></div>
+                <div class="cube-face bottom"></div>
+            </div>
+            <div class="floating-cube cube-3">
+                <div class="cube-face front"></div>
+                <div class="cube-face back"></div>
+                <div class="cube-face left"></div>
+                <div class="cube-face right"></div>
+                <div class="cube-face top"></div>
+                <div class="cube-face bottom"></div>
+            </div>
+            <div class="magic-ring ring-1"></div>
+            <div class="magic-ring ring-2"></div>
+            <div class="floating-diamond diamond-1"></div>
+            <div class="floating-diamond diamond-2"></div>
+            <div class="floating-diamond diamond-3"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-icon">📜</span>
+                <h2 class="section-title">Tentang Kelas Kami</h2>
+                <div class="title-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-symbol">⚡</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <p class="section-subtitle">Selamat datang di kelas paling legendaris di SMK Yadika 13 Tambun</p>
+            </div>
+
+            <div class="about-grid">
+                <!-- About Text -->
+                <div class="about-text reveal">
+                    <div class="parchment-card">
+                        <div class="parchment-corner tl"></div>
+                        <div class="parchment-corner tr"></div>
+                        <div class="parchment-corner bl"></div>
+                        <div class="parchment-corner br"></div>
+                        <h3 class="about-heading">The Sorting Hat Has Spoken</h3>
+                        <p>
+                            Kelas <strong>X TKJ 2</strong> adalah salah satu kelas terbaik di jurusan
+                            <strong>Teknik Komputer dan Jaringan</strong> SMK Yadika 13 Tambun.
+                            Seperti kelas Gryffindor yang dipenuhi penyihir-penyihir pemberani,
+                            kelas kami dipenuhi oleh para calon teknisi jaringan yang siap menaklukkan
+                            dunia digital!
+                        </p>
+                        <p>
+                            Dengan semangat kebersamaan dan tekad baja, kami belajar bersama untuk
+                            menguasai ilmu jaringan komputer, mulai dari dasar-dasar networking hingga
+                            konfigurasi server. Setiap hari adalah petualangan baru di "Hogwarts Teknologi" kami!
+                        </p>
+                        <div class="about-quote">
+                            <span class="quote-mark">"</span>
+                            It does not do to dwell on dreams and forget to live — tetapi mimpi adalah
+                            langkah awal menuju kesuksesan.
+                            <span class="quote-mark">"</span>
+                            <span class="quote-author">— Inspired by Albus Dumbledore</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Crest Card -->
+                <div class="about-card-3d reveal">
+                    <div class="card-3d-container">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-magic-emblem">
+                                    <div class="emblem-ring"></div>
+                                    <div class="emblem-ring ring-inner"></div>
+                                    <div class="emblem-icon">⚡</div>
+                                    <div class="emblem-sparkles">
+                                        <span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <h3 class="card-crest-title">X TKJ 2</h3>
+                                <p class="card-crest-sub">Est. 2026</p>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="card-back-title">Profil Kelas</h3>
+                                <ul class="card-back-list">
+                                    <li>📚 Jurusan: TKJ</li>
+                                    <li>🏫 Sekolah: SMK Yadika 13</li>
+                                    <li>📍 Lokasi: Tambun, Bekasi</li>
+                                    <li>👨‍🎓 Angkatan: 2026/2027</li>
+                                    <li>⚡ Motto: One Class, One Family</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="card-hint">✨ Hover untuk membalik kartu</p>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍🎓</div>
+                    <div class="stat-number" data-target="40">0</div>
+                    <div class="stat-label">Penyihir Muda</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🖥️</div>
+                    <div class="stat-number" data-target="1">0</div>
+                    <div class="stat-label">Jurusan TKJ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-number" data-target="2026">0</div>
+                    <div class="stat-label">Tahun Angkatan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">% Semangat</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WALI KELAS SECTION ============ -->
+    <section id="wali-kelas">
+        <div class="section-bg">
+            <img src="images/library-bg.jpg" alt="" class="section-bg-img">
+        </div>
+        <div class="section-overlay dark"></div>
+
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-icon">👩🏫</span>
+                <h2 class="section-title">Wali Kelas</h2>
+                <div class="title-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-symbol">⚡</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <p class="section-subtitle">Pemimpin kelas yang membimbing para penyihir muda</p>
+            </div>
+
+            <div class="wali-kelas-card reveal">
+                <div class="wali-card-inner">
+                    <div class="wali-card-glow"></div>
+                    <div class="wali-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-icon">👩🏫</div>
+                    </div>
+                    <div class="wali-info">
+                        <h3 class="wali-name">Dara Putri Oktiara, S.Kom., M.Kom</h3>
+                        <span class="wali-role">⚡ Head of House — Wali Kelas X TKJ 2</span>
+                        <p class="wali-desc">
+                            Guru TKJ dan sebagai wali kelas yang ramah, disiplin, dan selalu
+                            mendukung siswa untuk berkembang. Seperti Professor McGonagall
+                            yang tegas namun penuh kasih sayang terhadap murid-muridnya.
+                        </p>
+                        <div class="wali-badges">
+                            <span class="wali-badge">🎓 S.Kom</span>
+                            <span class="wali-badge">🎓 M.Kom</span>
+                            <span class="wali-badge">💻 Guru TKJ</span>
+                            <span class="wali-badge">🏫 Wali Kelas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Clock -->
+            <div class="digital-clock-container reveal">
+                <div class="clock-card">
+                    <div class="clock-header">
+                        <span class="clock-icon">⏰</span>
+                        <span class="clock-label">Jam Digital Hogwarts</span>
+                    </div>
+                    <div class="clock-display" id="digital-clock">
+                        <span class="clock-hours" id="clock-hours">00</span>
+                        <span class="clock-separator">:</span>
+                        <span class="clock-minutes" id="clock-minutes">00</span>
+                        <span class="clock-separator">:</span>
+                        <span class="clock-seconds" id="clock-seconds">00</span>
+                    </div>
+                    <div class="clock-date" id="clock-date"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ STRUKTUR KELAS SECTION ============ -->
+    <section id="struktur">
+        <div class="section-bg">
+            <img src="images/particles-bg.jpg" alt="" class="section-bg-img flip">
+        </div>
+        <div class="section-overlay"></div>
+
+        <!-- 3D Background -->
+        <div class="bg-3d-scene">
+            <div class="orbit orbit-1"><div class="orbit-particle"></div></div>
+            <div class="orbit orbit-2"><div class="orbit-particle"></div></div>
+            <div class="magic-ring ring-1"></div>
+            <div class="floating-diamond diamond-1"></div>
+            <div class="floating-diamond diamond-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-icon">👨‍🎓</span>
+                <h2 class="section-title">Struktur Kelas</h2>
+                <div class="title-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-symbol">🏆</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <p class="section-subtitle">Para petinggi yang menjaga ketertiban kelas</p>
+            </div>
+
+            <div class="struktur-grid reveal">
+                <!-- Ketua Kelas -->
+                <div class="struktur-card card-ketua">
+                    <div class="struktur-card-inner">
+                        <div class="struktur-rank">👑</div>
+                        <h4 class="struktur-name">Lucky</h4>
+                        <span class="struktur-position">Ketua Kelas</span>
+                        <div class="struktur-badge">Head Boy</div>
+                    </div>
+                </div>
+
+                <!-- Wakil -->
+                <div class="struktur-card card-wakil">
+                    <div class="struktur-card-inner">
+                        <div class="struktur-rank">🛡️</div>
+                        <h4 class="struktur-name">Hugo</h4>
+                        <span class="struktur-position">Wakil Ketua</span>
+                        <div class="struktur-badge">Deputy</div>
+                    </div>
+                </div>
+
+                <!-- Sekretaris -->
+                <div class="struktur-card card-sekretaris">
+                    <div class="struktur-card-inner">
+                        <div class="struktur-rank">📜</div>
+                        <h4 class="struktur-name">Silvy, Gian, Vena</h4>
+                        <span class="struktur-position">Sekretaris</span>
+                        <div class="struktur-badge">Scribes</div>
+                    </div>
+                </div>
+
+                <!-- Bendahara -->
+                <div class="struktur-card card-bendahara">
+                    <div class="struktur-card-inner">
+                        <div class="struktur-rank">💰</div>
+                        <h4 class="struktur-name">Angel, Yasmin, Azmi</h4>
+                        <span class="struktur-position">Bendahara</span>
+                        <div class="struktur-badge">Gringotts</div>
+                    </div>
+                </div>
+
+                <!-- Keamanan -->
+                <div class="struktur-card card-keamanan">
+                    <div class="struktur-card-inner">
+                        <div class="struktur-rank">⚔️</div>
+                        <h4 class="struktur-name">Luzny, Fatan, Adzik</h4>
+                        <span class="struktur-position">Keamanan</span>
+                        <div class="struktur-badge">Aurors</div>
+                    </div>
+                </div>
+
+                <!-- Kebersihan -->
+                <div class="struktur-card card-kebersihan">
+                    <div class="struktur-card-inner">
+                        <div class="struktur-rank">✨</div>
+                        <h4 class="struktur-name">Resty, Athan, Adit, Baik</h4>
+                        <span class="struktur-position">Kebersihan</span>
+                        <div class="struktur-badge">House Elves</div>
+                    </div>
+                </div>
+
+                <!-- Kesehatan -->
+                <div class="struktur-card card-kesehatan">
+                    <div class="struktur-card-inner">
+                        <div class="struktur-rank">🏥</div>
+                        <h4 class="struktur-name">Aish, Imas, Nabila</h4>
+                        <span class="struktur-position">Kesehatan</span>
+                        <div class="struktur-badge">Healers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GALLERY SECTION ============ -->
+    <section id="gallery">
+        <div class="section-bg">
+            <img src="images/library-bg.jpg" alt="" class="section-bg-img">
+        </div>
+        <div class="section-overlay dark"></div>
+
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-icon">🖼️</span>
+                <h2 class="section-title">Galeri Kenangan</h2>
+                <div class="title-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-symbol">✦</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <p class="section-subtitle">Momen-momen magis yang terekam dalam Pensieve kami</p>
+            </div>
+
+            <!-- 3D Gallery Carousel -->
+            <div class="gallery-carousel reveal">
+                <div class="carousel-stage" id="carousel-stage">
+                    <div class="carousel-track" id="carousel-track">
+                        <div class="carousel-item" data-index="0">
+                            <div class="photo-frame">
+                                <div class="frame-border">
+                                    <img src="images/class-photo-2.jpg" alt="Foto Kelas X TKJ 2" class="gallery-img" loading="lazy">
+                                </div>
+                                <div class="photo-caption">
+                                    <h4>📸 Foto Kelas X TKJ 2</h4>
+                                    <p>Kebersamaan yang tak terlupakan</p>
+                                </div>
+                                <div class="photo-glow"></div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-index="1">
+                            <div class="photo-frame">
+                                <div class="frame-border">
+                                    <img src="images/class-banner.jpg" alt="Welcome to Class X TKJ 2" class="gallery-img" loading="lazy">
+                                </div>
+                                <div class="photo-caption">
+                                    <h4>🧙‍♂️ Welcome to Hogwarts TKJ</h4>
+                                    <p>Gerbang menuju dunia sihir teknologi</p>
+                                </div>
+                                <div class="photo-glow"></div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-index="2">
+                            <div class="photo-frame">
+                                <div class="frame-border">
+                                    <img src="images/class-photo-1.jpg" alt="Momen Kebersamaan" class="gallery-img" loading="lazy">
+                                </div>
+                                <div class="photo-caption">
+                                    <h4>🤝 Momen Kebersamaan</h4>
+                                    <p>Bersama dalam suka dan duka</p>
+                                </div>
+                                <div class="photo-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav">
+                    <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous photo">
+                        <span>❮</span>
+                    </button>
+                    <div class="carousel-dots" id="carousel-dots">
+                        <button class="dot active" data-index="0" aria-label="Photo 1"></button>
+                        <button class="dot" data-index="1" aria-label="Photo 2"></button>
+                        <button class="dot" data-index="2" aria-label="Photo 3"></button>
+                    </div>
+                    <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next photo">
+                        <span>❯</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ JADWAL SERAGAM SECTION ============ -->
+    <section id="jadwal">
+        <div class="section-bg">
+            <img src="images/library-bg.jpg" alt="" class="section-bg-img">
+        </div>
+        <div class="section-overlay dark"></div>
+
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-icon">📚</span>
+                <h2 class="section-title">Jadwal Seragam</h2>
+                <div class="title-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-symbol">🧙</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <p class="section-subtitle">Dress code para penyihir SMK Yadika 13 Tambun</p>
+            </div>
+
+            <div class="jadwal-table-wrapper reveal">
+                <table class="jadwal-table">
+                    <thead>
+                        <tr>
+                            <th><span class="th-icon">📅</span> Hari</th>
+                            <th><span class="th-icon">👔</span> Seragam</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="day-badge day-senin">Senin</span></td>
+                            <td>Putih abu-abu, atribut lengkap</td>
+                        </tr>
+                        <tr>
+                            <td><span class="day-badge day-selasa">Selasa</span></td>
+                            <td>Baju kotak + celana putih</td>
+                        </tr>
+                        <tr>
+                            <td><span class="day-badge day-rabu">Rabu</span></td>
+                            <td>Pramuka, atribut lengkap</td>
+                        </tr>
+                        <tr>
+                            <td><span class="day-badge day-kamis">Kamis</span></td>
+                            <td>Baju putih + dasi hitam + celana hitam polos</td>
+                        </tr>
+                        <tr>
+                            <td><span class="day-badge day-jumat">Jumat</span></td>
+                            <td>Baju kotak + celana putih</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ VISION & MISSION SECTION ============ -->
+    <section id="vision">
+        <div class="section-bg">
+            <img src="images/particles-bg.jpg" alt="" class="section-bg-img flip">
+        </div>
+        <div class="section-overlay"></div>
+
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-icon">🔮</span>
+                <h2 class="section-title">Visi & Misi</h2>
+                <div class="title-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-symbol">🔮</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <p class="section-subtitle">Ramalan masa depan yang tertulis di bintang-bintang</p>
+            </div>
+
+            <div class="vision-grid">
+                <!-- Visi Card -->
+                <div class="vision-card reveal">
+                    <div class="vision-card-inner">
+                        <div class="vision-card-glow"></div>
+                        <div class="vision-icon">🌟</div>
+                        <h3 class="vision-title">Visi</h3>
+                        <div class="vision-divider"></div>
+                        <p class="vision-text">
+                            Menjadi kelas yang unggul, berprestasi, dan berdaya saing tinggi dalam bidang
+                            Teknik Komputer dan Jaringan, serta memiliki karakter mulia layaknya para
+                            penyihir Hogwarts yang berani, cerdas, dan penuh dedikasi.
+                        </p>
+                        <div class="vision-spell">✨ Expecto Patronum ✨</div>
+                    </div>
+                </div>
+
+                <!-- Misi Card -->
+                <div class="vision-card reveal" style="--card-delay: 0.2s;">
+                    <div class="vision-card-inner">
+                        <div class="vision-card-glow"></div>
+                        <div class="vision-icon">📋</div>
+                        <h3 class="vision-title">Misi</h3>
+                        <div class="vision-divider"></div>
+                        <ul class="vision-list">
+                            <li>
+                                <span class="list-icon">⚡</span>
+                                Meningkatkan prestasi akademik dan non-akademik seluruh siswa
+                            </li>
+                            <li>
+                                <span class="list-icon">⚡</span>
+                                Membangun kebersamaan dan solidaritas yang kuat antar anggota kelas
+                            </li>
+                            <li>
+                                <span class="list-icon">⚡</span>
+                                Menguasai kompetensi Teknik Komputer dan Jaringan secara profesional
+                            </li>
+                            <li>
+                                <span class="list-icon">⚡</span>
+                                Mengembangkan karakter disiplin, kreatif, dan bertanggung jawab
+                            </li>
+                            <li>
+                                <span class="list-icon">⚡</span>
+                                Menciptakan lingkungan belajar yang kondusif dan menyenangkan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Motto Card -->
+                <div class="vision-card motto-card reveal" style="--card-delay: 0.4s;">
+                    <div class="vision-card-inner">
+                        <div class="vision-card-glow"></div>
+                        <div class="vision-icon">🗝️</div>
+                        <h3 class="vision-title">Motto Kelas</h3>
+                        <div class="vision-divider"></div>
+                        <div class="motto-content">
+                            <div class="motto-main">
+                                <span class="motto-quote">"</span>
+                                One Class, One Family
+                                <span class="motto-quote">"</span>
+                            </div>
+                            <p class="motto-desc">
+                                Seperti para penyihir yang bersatu melawan kegelapan, kami bersatu
+                                untuk meraih mimpi dan prestasi bersama. Setiap tantangan adalah
+                                mantra baru yang harus dikuasai!
+                            </p>
+                        </div>
+                        <div class="vision-spell">🪄 Mischief Managed 🪄</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inspirational Quote -->
+            <div class="inspiration-quote reveal">
+                <div class="quote-frame">
+                    <div class="quote-candle left">🕯️</div>
+                    <blockquote>
+                        <p>"Happiness can be found, even in the darkest of times, if one only remembers to turn on the light."</p>
+                        <cite>— Albus Dumbledore</cite>
+                    </blockquote>
+                    <div class="quote-candle right">🕯️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer id="footer">
+        <div class="footer-magic-border"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/school-logo.jpg" alt="Logo SMK Yadika 13" class="footer-crest">
+                    <h3 class="footer-title">X TKJ 2</h3>
+                    <p class="footer-school">SMK Yadika 13 Tambun</p>
+                    <p class="footer-tagline">The Wizarding Class of Technology</p>
+                </div>
+                <div class="footer-info">
+                    <h4 class="footer-heading">📍 Informasi</h4>
+                    <ul class="footer-list">
+                        <li>🏫 SMK Yadika 13 Tambun</li>
+                        <li>📚 Jurusan: TKJ (Teknik Komputer dan Jaringan)</li>
+                        <li>📅 Tahun Ajaran 2026/2027</li>
+                        <li>📍 Tambun, Bekasi, Jawa Barat</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">🔗 Menu</h4>
+                    <ul class="footer-list">
+                        <li><a href="#hero">🏠 Home</a></li>
+                        <li><a href="#about">📜 About</a></li>
+                        <li><a href="#gallery">🖼️ Gallery</a></li>
+                        <li><a href="#vision">🔮 Visi & Misi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-symbol">⚡</span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="footer-copyright">
+                    © 2026 Kelas X TKJ 2 — SMK Yadika 13 Tambun<br>
+                    <span class="footer-magic">Crafted with 🪄 Magic & 💻 Technology by <strong>Dimas Nur Faiz</strong></span>
+                </p>
+                <p class="footer-marauder">I solemnly swear that I am up to no good 🗺️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+        <div class="lightbox-content">
+            <img class="lightbox-img" id="lightbox-img" src="" alt="Enlarged photo">
+        </div>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous photo">❮</button>
+        <button class="lightbox-next" id="lightbox-next" aria-label="Next photo">❯</button>
+    </div>
+
+    <!-- ============ BACK TO TOP ============ -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <span class="btt-icon">🧹</span>
+        <span class="btt-text">Fly Up</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
